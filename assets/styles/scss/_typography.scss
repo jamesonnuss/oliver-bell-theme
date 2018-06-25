@@ -4,11 +4,9 @@ Stylesheet: Typography Stylesheet
 
 *************************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Rosario:400,400i,700');
-@import url('https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
-$rosario: 'Rosario', sans-serif;
-$overpass: 'Overpass', sans-serif;
+$font: 'Montserrat', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @font-face {
   font-family: 'icomoon';
@@ -68,7 +66,7 @@ $overpass: 'Overpass', sans-serif;
 }
 
 a{
-    color: $blue;
+    color: $color4;
     text-decoration: underline;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -76,44 +74,83 @@ a{
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     &:hover,&:focus{
-        color: $green;
+        color: $color6;
         text-decoration: underline;
     }
     &:visited{
-        color: $blue;
+        color: $color4;
     }
 }
 
 .button,input[type=submit]{
-    background-color: $blue;
+    position: relative;
+    // background:$gradient1;
+    background: $color6;
     color: $white;
-    font-family: $overpass;
-    font-weight: 600;
-    font-size:rem-calc(17);
+    font-family: $font;
+    font-weight: 500;
+    font-size:rem-calc(18);
     line-height:1;
-    letter-spacing: rem-calc(.5);
     text-align: center;
-    border-radius: rem-calc(3);
-    -webkit-border-radius: rem-calc(3);
-    -moz-border-radius: rem-calc(3);
-    -ms-border-radius: rem-calc(3);
-    padding:rem-calc(20) rem-calc(25) rem-calc(22) rem-calc(25);
+    border-radius: rem-calc(100);
+    -webkit-border-radius: rem-calc(100);
+    -moz-border-radius: rem-calc(100);
+    -ms-border-radius: rem-calc(100);
+    padding:rem-calc(15) rem-calc(40);
     margin:0;
     text-decoration: none;
+    min-width: rem-calc(211);
+    border:0;
+    border:2px solid $color6;
+    // background-clip: border-box;
+    // -moz-background-clip: border-box;
+    // -webkit-background-clip: border-box;
+    // &::after {
+    //     position: absolute;
+    //     top: -2px; bottom: -2px;
+    //     left: -2px; right: -2px;
+    //     background:$gradient1;
+    //     background-clip: content-box;
+    //     content: '';
+    //     z-index: -1;
+    //     border-radius: rem-calc(100);
+    //     -webkit-border-radius: rem-calc(100);
+    //     -moz-border-radius: rem-calc(100);
+    //     -ms-border-radius: rem-calc(100);
+    // }
     &:hover{
-        color: $white;
-        background-color:$green;
+        background:transparent;
+        border:0;
         text-decoration: none;
+        color:$color6;
+        border:2px solid $color6;
+        // &::after {
+        //     position: absolute;
+        //     top: -2px; bottom: -2px;
+        //     left: -2px; right: -2px;
+        //     background:$gradient1;
+        //     background-clip: content-box;
+        //     content: '';
+        //     z-index: -1;
+        //     border-radius: rem-calc(100);
+        //     -webkit-border-radius: rem-calc(100);
+        //     -moz-border-radius: rem-calc(100);
+        //     -ms-border-radius: rem-calc(100);
+        // }
     }
     &:focus{
-        background-color: $blue;
-        color: $white;
+        background:transparent;
+        border:0;
         text-decoration: none;
+        color:$color6;
+        border:2px solid $color6;
     }
     &:active{
-        background-color: $blue;
-        color: $white;
+        background:transparent;
+        border:0;
         text-decoration: none;
+        color:$color6;
+        border:2px solid $color6;
     }
     &:visited{
         color: $white;
@@ -130,13 +167,13 @@ a{
 }
 
 h1{
-    font-family: $rosario;
+    font-family: $font;
     font-size: rem-calc(42);
     line-height:rem-calc(48);
     font-weight: 700;
     letter-spacing: rem-calc(.5);
     margin-bottom: 2rem;
-    color: $blue;
+    color: $color4;
     @include breakpoint (medium down) {
         font-size: rem-calc(38);
         line-height: rem-calc(44);
@@ -149,26 +186,26 @@ h1{
 }
 
 h2,h3,h4,h5,h6{
-    font-family: $rosario;
+    font-family: $font;
     letter-spacing: rem-calc(.5);
-    color: $blue;
+    color: $color4;
     font-weight: 700;
 }
 
 p,span,li{
-    font-family: $overpass;
-    color: $blue;
+    font-family: $font;
+    color: $color4;
     font-weight: 400;
 }
 
 blockquote{
-    font-family: $overpass;
-    color: $blue;
+    font-family: $font;
+    color: $color4;
     font-weight: 400;
-    border-left: rem-calc(1) solid $blue;
+    border-left: rem-calc(1) solid $color4;
     p{
-        font-family: $overpass;
-        color: $blue;
+        font-family: $font;
+        color: $color4;
         font-weight: 400;
     }
 }

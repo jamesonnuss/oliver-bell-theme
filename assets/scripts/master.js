@@ -1,4 +1,20 @@
 jQuery( document ).ready(function($) {
+    /* Sticky Header on Load */
+    var scrollPosition = window.pageYOffset;
+    if (scrollPosition >= 50) {
+        $('header.header').addClass('sticky');
+    } else {
+        $('header.header').removeClass('sticky');
+    }
+    $(window).scroll(function() {
+        /* Sticky Header on Scroll */
+        var scrollPosition = window.pageYOffset;
+        if (scrollPosition >= 50) {
+            $('header.header').addClass('sticky');
+        } else {
+            $('header.header').removeClass('sticky');
+        }
+    }).scroll();
     $('.anchor-button').on( "click", function() {
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
@@ -41,19 +57,4 @@ jQuery( document ).ready(function($) {
 	           mainMenu();
 	    }, 250);
 	});
-    function liveChat(){
-        var headerHeight = $('.content-header').height();
-        var navHeight = $('header.header').height();
-        var showPosition = headerHeight + navHeight;
-        var scrollPosition = window.pageYOffset;
-        if (scrollPosition >= navHeight) {
-            $('.live-chat').fadeIn();
-        } else {
-            $('.live-chat').fadeOut();
-        }
-    }
-    liveChat();
-    $(window).scroll(function() {
-        liveChat();
-    });
 });

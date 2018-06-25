@@ -37,7 +37,7 @@
 
 	<body <?php body_class(); ?>>
 
-    	<header class="header" role="banner">
+    	<header class="header <?php if( get_field('header_image')): ?><?php else: ?>default<?php endif; ?>" role="banner">
 
     		<?php get_template_part( 'parts/nav', 'main-menu' ); ?>
 

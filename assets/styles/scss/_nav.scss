@@ -4,14 +4,73 @@ Stylesheet: Navigation Stylesheet
 
 *************************************************/
 header.header{
-    background-color: $white;
-    position: relative;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
     z-index: 2;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    @include breakpoint (small down) {
+        background-color: $color1;
+    }
+    &.sticky,&.default{
+        background-color: $color1;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+        .main-menu .top-bar-left .menu a svg g.cls-1, .main-menu .top-bar-left .menu a svg g#OLIVER_BELL_ICON{
+            fill:$color4 !important;
+            transition: all 0.3s ease 0s;
+            -webkit-transition: all 0.3s ease 0s;
+            -moz-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+        }
+        .main-menu .top-bar-left .menu a:hover{
+            svg g.cls-1, svg g#OLIVER_BELL_ICON{
+                fill:$color6 !important;
+            }
+        }
+        .main-menu #menu-main-menu li a{
+            color: $color4;
+            &:hover{
+                color: $color6;
+                @include breakpoint (small down) {
+                    color: $white;
+                }
+            }
+        }
+        .main-menu #menu-main-menu li.current-menu-item a{
+            color: $color6;
+            &:hover{
+                @include breakpoint (small down) {
+                    color: $white;
+                    background-color: $color6;
+                }
+            }
+        }
+        .is-dropdown-submenu>li{
+            background: $color1;
+            color: $color4;
+        }
+        .main-menu #menu-main-menu li .submenu{
+            top:rem-calc(76);
+            @include breakpoint (small down) {
+                top: 0 !important;
+            }
+        }
+        .main-menu #menu-main-menu li .submenu li a, .main-menu #menu-main-menu li .submenu li a:hover{
+            border-top: 0;
+        }
+        .main-menu #menu-main-menu li .submenu li a:hover{
+            @include breakpoint (small down) {
+                background:$color6;
+            }
+        }
+    }
 }
 .main-menu{
     .logo-container{
@@ -57,9 +116,12 @@ header.header{
         font-size: rem-calc(18);
         margin-left: auto;
         display: none;
-        color: $blue;
+        color: $color4;
         font-weight: 700;
-        font-family: $overpass;
+        font-family: $font;
+        &:hover{
+            color: $color6;
+        }
         @include breakpoint (small down) {
             display: block;
         }
@@ -68,25 +130,27 @@ header.header{
             right: 0;
             top: 2px;
             left: inherit;
-            box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-            -moz-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-            -ms-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-            -webkit-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-            -o-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
+            box-shadow: 0 6px 0 $color4, 0 12px 0 $color4;
+            -moz-box-shadow: 0 6px 0 $color4, 0 12px 0 $color4;
+            -ms-box-shadow: 0 6px 0 $color4, 0 12px 0 $color4;
+            -webkit-box-shadow: 0 6px 0 $color4, 0 12px 0 $color4;
+            -o-box-shadow: 0 6px 0 $color4, 0 12px 0 $color4;
+            background-color: $color4;
         }
         &:hover{
             &:after{
-                box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-                -moz-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-                -ms-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-                -webkit-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-                -o-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-                background-color: $blue;
+                box-shadow:0 6px 0 $color6, 0 12px 0 $color6;
+                -moz-box-shadow:0 6px 0 $color6, 0 12px 0 $color6;
+                -ms-box-shadow:0 6px 0 $color6, 0 12px 0 $color6;
+                -webkit-box-shadow:0 6px 0 $color6, 0 12px 0 $color6;
+                -o-box-shadow:0 6px 0 $color6, 0 12px 0 $color6;
+                background-color: $color6;
             }
         }
         &.active-menu{
+            color: $color6;
             &:after{
-                color: $blue;
+                color: $color6;
                 content:'\d7';
                 box-shadow: none;
                 background-color: transparent;
@@ -119,15 +183,14 @@ header.header{
         }
         li{
             a{
-                background-color: $white;
-                color: $blue;
+                background-color: transparent;
                 border-bottom:3px solid transparent;
-                font-family: $overpass;
+                font-family: $font;
                 font-size:rem-calc(17);
                 line-height:1;
                 font-weight: 700;
-                color: $blue;
-                padding:1rem 1rem 1.35rem 1rem;
+                color: $white;
+                padding:1rem;
                 text-decoration: none;
                 @media only screen and (max-width:60.938rem){
                     font-size:rem-calc(16);
@@ -136,15 +199,16 @@ header.header{
                     padding:1rem;
                     border-bottom: 0;
                     font-size:rem-calc(17);
+                    color: $color4;
                 }
             }
             a:hover{
-                color: $green;
+                color: $color6;
                 border-bottom:3px solid transparent;
                 text-decoration: none;
                 @include breakpoint (small down) {
                     border-bottom: 0;
-                    background-color: $blue;
+                    background-color: $color6;
                     color: $white;
                 }
             }
@@ -158,12 +222,18 @@ header.header{
                 }
             }
             &.current-menu-item a{
-                color: $green;
+                color: $color6;
                 font-weight: bold;
                 @include breakpoint (small down) {
-                    color: $white;
-                    background-color: $blue;
+                    color: $color6;
+                    background-color: transparent;
                     border-bottom: none;
+                }
+                &:hover{
+                    @include breakpoint (small down) {
+                        color: $white;
+                        background-color: $color6;
+                    }
                 }
             }
             &.menu-item-has-children a{
@@ -176,7 +246,7 @@ header.header{
                 }
             }
             &.is-dropdown-submenu-parent.is-active a.sf-with-ul{
-                color: $green;
+                color: $color6;
             }
             .submenu{
                 border-top: 0;
@@ -192,7 +262,8 @@ header.header{
                 -ms-transform: translate(-50%, 0);
                 -o-transform: translate(-50%, 0);
                 z-index: -1;
-                background-color:$white;
+                background-color:transparent;
+                border:0;
                 @include breakpoint (small down) {
                     z-index: 1;
                     position: relative;
@@ -203,32 +274,43 @@ header.header{
                     a{
                         padding:1rem;
                         border-bottom: 0;
-                        background-color: $light-gray;
-                        color: $blue;
+                        // background-color: $light-gray;
+                        background-color: transparent;
+                        color: $white;
                         font-size: rem-calc(16);
                         transition:none;
                         -webkit-transition:none;
                         -moz-transition:none;
                         -o-transition:none;
                         -ms-transition:none;
+                        border-top:1px solid $white;
+                        @include breakpoint (small down) {
+                            color: $color4;
+                            border-top: 0;
+                        }
                     }
                     a:hover{
-                        background-color: $blue;
-                        color: $white;
+                        background-color: transparent;
+                        border-top:1px solid $white;
+                        color: $color6;
                         transition:none;
                         -webkit-transition:none;
                         -moz-transition:none;
                         -o-transition:none;
                         -ms-transition:none;
+                        @include breakpoint (small down) {
+                            border-top: 0;
+                            color:$white;
+                            background:$color6;
+                        }
                     }
                     &.current-menu-item a{
-                        color: $green;
+                        color: $color6;
                         @include breakpoint (small down) {
-                            color: $white;
-                            background-color: $blue;
-                        }
-                        &:hover{
-                            color: $white;
+                            &:hover{
+                                color: $white;
+                                background-color: $color6;
+                            }
                         }
                     }
                 }
@@ -245,7 +327,7 @@ header.header{
         -ms-flex-direction: column;
         flex-direction: column;
         text-align: center;
-        height: 135px;
+        height: 100px;
         float: right;
         @include breakpoint (small down) {
             width: 100%;
@@ -274,20 +356,20 @@ header.header{
             span{
                 display: block;
                 text-align: right;
-                font-family: $overpass;
+                font-family: $font;
                 font-weight: 700;
                 font-style: italic;
                 font-size: rem-calc(14);
                 letter-spacing:rem-calc(.5);
-                color:$blue;
+                color: $color6;
             }
             a{
-                font-family: $overpass;
+                font-family: $font;
                 font-weight: 700;
                 font-style: normal;
                 font-size: rem-calc(17);
                 letter-spacing:rem-calc(.5);
-                color:$green;
+                color: $color6;
                 position: relative;
                 top: rem-calc(-2);
                 text-decoration: none;
@@ -310,12 +392,37 @@ header.header{
                 -ms-flex-direction: column;
                 flex-direction: column;
                 text-align: center;
-                height: rem-calc(135);
+                height: rem-calc(100);
                 z-index: 1;
                 position: relative;
+                max-width: 100%;
+                transition: all 0.5s ease 0s;
+                -webkit-transition: all 0.5s ease 0s;
+                -moz-transition: all 0.5s ease 0s;
+                -ms-transition: all 0.5s ease 0s;
+                svg{
+                    width: 100%;
+                    height: rem-calc(70);
+                    g{
+                        fill:$white;
+                        transition: all 0.3s ease;
+                        -webkit-transition: all 0.3s ease;
+                        -moz-transition: all 0.3s ease;
+                        -o-transition: all 0.3s ease;
+                        -ms-transition: all 0.3s ease;
+                        @include breakpoint (small down) {
+                            fill: $color4;
+                        }
+                    }
+                }
                 @include breakpoint (small down) {
                     height: rem-calc(110);
                     padding-top: rem-calc(18)
+                }
+                &:hover{
+                    svg g{
+                        fill:$color6;
+                    }
                 }
             }
             img{

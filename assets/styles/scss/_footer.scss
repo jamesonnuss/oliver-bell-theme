@@ -45,14 +45,14 @@ Stylesheet: Footer Stylesheet
             }
         }
         span.city{
-            font-family: $rosario;
+            font-family: $font;
             font-size: rem-calc(24);
             color: $blue;
             font-weight: 700;
             display: block;
         }
         span,p{
-            font-family: $overpass;
+            font-family: $font;
             font-size: rem-calc(16);
             color: $blue;
             font-weight: 400;
@@ -83,7 +83,7 @@ footer.footer{
     }
     p{
         margin-bottom: 0;
-        font-family: $overpass;
+        font-family: $font;
         font-size: rem-calc(16);
         font-weight: 400;
         color: $blue;
@@ -106,10 +106,15 @@ footer.footer{
             }
         }
         a{
-            font-family: $overpass;
+            font-family: $font;
             font-size: rem-calc(16);
             font-weight: 400;
             padding:0 1.5rem;
+            color: $color4 !important;
+            background-color: transparent !important;
+            &:hover{
+                color: $color6 !important;
+            }
         }
     }
     .social-media{
