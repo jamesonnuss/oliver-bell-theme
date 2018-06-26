@@ -84,7 +84,6 @@ a{
 
 .button,input[type=submit]{
     position: relative;
-    // background:$gradient1;
     background: $color6;
     color: $white;
     font-family: $font;
@@ -100,43 +99,13 @@ a{
     margin:0;
     text-decoration: none;
     min-width: rem-calc(211);
-    border:0;
     border:2px solid $color6;
-    // background-clip: border-box;
-    // -moz-background-clip: border-box;
-    // -webkit-background-clip: border-box;
-    // &::after {
-    //     position: absolute;
-    //     top: -2px; bottom: -2px;
-    //     left: -2px; right: -2px;
-    //     background:$gradient1;
-    //     background-clip: content-box;
-    //     content: '';
-    //     z-index: -1;
-    //     border-radius: rem-calc(100);
-    //     -webkit-border-radius: rem-calc(100);
-    //     -moz-border-radius: rem-calc(100);
-    //     -ms-border-radius: rem-calc(100);
-    // }
     &:hover{
         background:transparent;
         border:0;
         text-decoration: none;
         color:$color6;
         border:2px solid $color6;
-        // &::after {
-        //     position: absolute;
-        //     top: -2px; bottom: -2px;
-        //     left: -2px; right: -2px;
-        //     background:$gradient1;
-        //     background-clip: content-box;
-        //     content: '';
-        //     z-index: -1;
-        //     border-radius: rem-calc(100);
-        //     -webkit-border-radius: rem-calc(100);
-        //     -moz-border-radius: rem-calc(100);
-        //     -ms-border-radius: rem-calc(100);
-        // }
     }
     &:focus{
         background:transparent;
@@ -146,15 +115,20 @@ a{
         border:2px solid $color6;
     }
     &:active{
-        background:transparent;
+        background:$color6;
         border:0;
         text-decoration: none;
-        color:$color6;
+        color:$white;
         border:2px solid $color6;
     }
     &:visited{
         color: $white;
+        background:$color6;
+        border:2px solid $color6;
         text-decoration: none;
+        &:hover{
+            color: $color6;
+        }
     }
     @include breakpoint (small down) {
         padding:rem-calc(16) rem-calc(21) rem-calc(18) rem-calc(21);
